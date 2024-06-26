@@ -1,11 +1,431 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>website</title>
+    <title>test 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            position: relative;
+            margin: 0px;
+            -webkit-font-smoothing: antialiased;
+            background-color: white;
+            font-family: sans-serif;
+        }
+
+        #intro {
+            position: relative;
+            top: 0;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            font-size: 5em;
+            font-weight: 1000;
+            height: 0px;
+            gap: 8.5%;
+            overflow: hidden;
+        }
+
+        #intro div {
+            margin: 0px;
+            padding: 0px;
+            color: rgba(0, 0, 0, 1);
+            z-index: 2;
+        }
+
+        .motto1 {
+            display: none;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .motto2 {
+            display: none;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+
+        .letter-c,
+        .letter-h,
+        .letter-a,
+        .letter-n,
+        .letter-e,
+        .letter-l {
+            display: none;
+            text-align: center;
+        }
+
+        #myVideo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .navlinks {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 8px;
+        }
+        .sidepanel-navkinks{
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            left: 0;
+            width: 50%;
+            background-color: whitesmoke;
+            border-radius: 1%;
+            z-index: 22;
+
+        }
+        .navlinks a {
+            text-decoration: none;
+            color: #333;
+            font-family: Helvetica, Open-Sans, "sans-serif-light", sans-serif;
+            font-size: .875rem;
+            font-weight: 300;
+            letter-spacing: .00625rem;
+            line-height: 1.2857142857;
+        }
+
+        .navlinks a:hover {
+            color: black;
+            background-color: aqua;
+            text-transform: ;
+        }
+
+        .burger-icon{
+        position: absolute;
+            left: 10px; /* Adjust as needed */
+            top: 10px; /* Adjust as needed */
+            z-index: 3;
+        }
+.burger {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  transition: 300ms;
+  border-radius: 10px;
+}
+.burger input[type="checkbox"] {
+  appearance: none;
+  transition: 300ms;
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  transition: 300ms;
+  transform-origin: center center;
+}
+
+.burger::before {
+  transform: translateY(8px);
+}
+.burger::after {
+  transform: translateY(-8px);
+}
+.burger .line,
+.burger::before,
+.burger::after {
+  width: 25px;
+  height: 2.1px;
+  display: block;
+  background-color: black;
+  border-radius: 5px;
+  position: absolute;
+}
+
+.burger .line:checked {
+  width: 0;
+  transition-delay: 100ms;
+}
+.burger:has(.line:checked)::before {
+  animation: animation1 400ms ease-out 0s 1 both;
+}
+.burger:has(.line:checked)::after {
+  animation: animation2 400ms ease-out 0s 1 both;
+}
+
+.burger:hover {
+  background: #aeaeae;
+  border-radius: 50%;
+}
+
+.burger:hover .line,
+.burger:hover::before,
+.burger:hover::after {
+  background: #e8e8e8;
+}
+
+.burger:active {
+  scale: 0.95;
+}
+@keyframes animation1 {
+  0% {
+    transform: translateY(8px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(45deg);
+  }
+}
+@keyframes animation2 {
+  0% {
+    transform: translateY(-8px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(-45deg);
+  }
+}
+
+
+        .heder img {
+            display: block;
+            margin: auto;
+            border: 2px solid black;
+            border-radius: 50%;
+            width: 100px;
+            padding: 2px;
+        }
+
+        .heder h1 {
+            font-size: 2em;
+            text-align: center;
+            margin: 3px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .container-item {
+            text-align: center;
+            width: 32%;
+        }
+
+        .container-item p {
+            text-align: justify;
+            padding: 5%;
+        }
+
+        .content-wrapper {
+            flex-direction: column;
+            background-color: white;
+        }
+
+        .content1 {
+            background-color: white;
+            margin: 1%;
+        }
+
+        .sidebar {
+            background-color: white;
+            margin: 1%;
+            margin-left: 0px;
+        }
+
+        .contact {
+            position: sticky;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            bottom: 0;
+            color: white;
+            margin: 0px;
+            padding: 20px;
+            width: 100%;
+            z-index: -13;
+            background-color: black;
+        }
+
+        @media screen and (max-width: 500px) {
+
+            .container,
+            .content-wrapper {
+                flex-direction: column;
+            }
+
+            .container-item {
+                width: 100%;
+                margin-bottom: 2px;
+            }
+
+            .sidebar {
+                width: 100%;
+                float: none;
+                margin: 10px;
+            }
+
+            .content1 {
+                width: auto;
+            }
+        }
+    </style>
+
 </head>
-<body>
-     
+
+<body onload="myFunc();">
+    <div id="intro">
+      <div class="burger-icon">
+            <label class="burger" for="burger">
+                <input class="line" type="checkbox" id="burger" />
+            </label>
+        </div>
+
+
+        <video autoplay muted loop id="myVideo">
+            <source src="video/colors.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="motto1">Be irreplaceable</div>
+        <div class="motto2">Be different.</div>
+        <div class="letter-c">C</div>
+        <div class="letter-h">H</div>
+        <div class="letter-a">A</div>
+        <div class="letter-n">N</div>
+        <div class="letter-e">E</div>
+        <div class="letter-l">L</div>
+    </div>
+    <div class="sidepanel-navkinks">
+        <a href="#">HAUTE COUTURE</a>
+        <a href="#">FASHION</a>
+        <a href="#">JWELERY</a>
+        <a href="#">FINE JWELERY</a>
+        <a href="#">WATCHES</a>
+        <a href="">EYEWAER</a>
+        <a href="#">SKINCARE</a>
+        <a href="#">MAKEUP</a>
+        <a href="#">FRAGREANCE</a>
+        <a href="#">ABOUT CHANEL</a>
+    </div>
+    <div class="navlinks">
+          <a href="#">HAUTE COUTURE</a>
+        <a href="#">FASHION</a>
+        <a href="#">JWELERY</a>
+        <a href="#">FINE JWELERY</a>
+        <a href="#">WATCHES</a>
+        <a href="">EYEWAER</a>
+        <a href="#">SKINCARE</a>
+        <a href="#">MAKEUP</a>
+        <a href="#">FRAGREANCE</a>
+        <a href="#">ABOUT CHANEL</a>
+    </div>
+    <div class="heder">
+        <img src="images/karma.png" alt="image of karma">
+        <h1 class="main-heading">Hello</h1>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content1">
+            <div class="about-me">
+                <h1>about me</h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ea suscipit placeat architecto molestias
+                omnis aliquam quod exercitationem maiores vitae!
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h1 style="padding: 0px;">popular</h1>
+            <ul>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+                <li>ji</li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="contact">
+        <div class="container">
+            <div class="container-item">
+                <h2>Heading 1</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam fuga vitae quaerat, reiciendis,
+                    perferendis architecto nesciunt similique exercitationem esse maxime nemo, ullam accusantium.</p>
+            </div>
+            <div class="container-item">
+                <h2>Heading 2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto dolorem quo accusantium,
+                    explicabo
+                    quod, sed quasi numquam, corporis porro sapiente aliquid possimus modi!</p>
+            </div>
+            <div class="container-item">
+                <h2>Heading 3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab consectetur deleniti iure voluptatem
+                    sunt?
+                    Commodi veniam eum laborum ipsam minus culpa reiciendis dignissimos.</p>
+            </div>
+        </div>
+        footer
+    </div>
+    <script>
+        function myFunc() {
+            $("#intro").animate({ height: "200px" });
+            $(".motto1").delay(500).fadeIn(1000);
+            $(".motto1").fadeOut("fast");
+            $(".motto2").delay(2000).fadeIn(1000);
+            $(".motto2").fadeOut("slow", function () {
+
+                $(".letter-c").delay(500).fadeIn(800);
+                $(".letter-h").delay(1000).fadeIn(800);
+                $(".letter-a").delay(1500).fadeIn(800);
+                $(".letter-n").delay(2000).fadeIn(800);
+                $(".letter-e").delay(2500).fadeIn(800);
+                $(".letter-l").delay(3000).fadeIn(800);
+
+
+            });
+            $("#myVideo").delay(7000).fadeOut(500, function () {
+                $("#intro").css("position", "sticky")
+                $("#intro").animate({ height: "50px", gap: "0.4%", fontSize: "2.4em", fontWeight: "600" });
+            });
+        }
+    </script>
 </body>
+
 </html>
