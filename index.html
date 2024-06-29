@@ -81,10 +81,11 @@
             justify-content: center;
             gap: 20px;
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 1);
             padding: 8px;
         }
-        .sidepanel-navkinks{
+
+        .sidepanel-navkinks {
             display: none;
             flex-direction: column;
             position: absolute;
@@ -93,8 +94,8 @@
             background-color: whitesmoke;
             border-radius: 1%;
             z-index: 22;
-
         }
+
         .navlinks a {
             text-decoration: none;
             color: #333;
@@ -102,124 +103,146 @@
             font-size: .875rem;
             font-weight: 300;
             letter-spacing: .00625rem;
+            transition: transform 0.18s ;
             line-height: 1.2857142857;
         }
 
         .navlinks a:hover {
             color: black;
-            background-color: aqua;
-            text-transform: ;
+            transform: scale(1.4);
         }
 
-        .burger-icon{
-        position: absolute;
-            left: 10px; /* Adjust as needed */
-            top: 10px; /* Adjust as needed */
+        .burger-icon {
+            position: absolute;
+            left: 10px;
+            /* Adjust as needed */
+            top: 10px;
+            /* Adjust as needed */
             z-index: 3;
         }
-.burger {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-  cursor: pointer;
-  transition: 300ms;
-  border-radius: 10px;
-}
-.burger input[type="checkbox"] {
-  appearance: none;
-  transition: 300ms;
-}
 
-.burger::before,
-.burger::after {
-  content: "";
-  transition: 300ms;
-  transform-origin: center center;
-}
-
-.burger::before {
-  transform: translateY(8px);
-}
-.burger::after {
-  transform: translateY(-8px);
-}
-.burger .line,
-.burger::before,
-.burger::after {
-  width: 25px;
-  height: 2.1px;
-  display: block;
-  background-color: black;
-  border-radius: 5px;
-  position: absolute;
-}
-
-.burger .line:checked {
-  width: 0;
-  transition-delay: 100ms;
-}
-.burger:has(.line:checked)::before {
-  animation: animation1 400ms ease-out 0s 1 both;
-}
-.burger:has(.line:checked)::after {
-  animation: animation2 400ms ease-out 0s 1 both;
-}
-
-.burger:hover {
-  background: #aeaeae;
-  border-radius: 50%;
-}
-
-.burger:hover .line,
-.burger:hover::before,
-.burger:hover::after {
-  background: #e8e8e8;
-}
-
-.burger:active {
-  scale: 0.95;
-}
-@keyframes animation1 {
-  0% {
-    transform: translateY(8px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  100% {
-    transform: translateY(0px) rotate(45deg);
-  }
-}
-@keyframes animation2 {
-  0% {
-    transform: translateY(-8px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  100% {
-    transform: translateY(0px) rotate(-45deg);
-  }
-}
-
-
-        .heder img {
-            display: block;
-            margin: auto;
-            border: 2px solid black;
-            border-radius: 50%;
-            width: 100px;
-            padding: 2px;
+        .burger {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 300ms;
+            border-radius: 10px;
         }
 
-        .heder h1 {
-            font-size: 2em;
-            text-align: center;
-            margin: 3px;
+        .burger input[type="checkbox"] {
+            appearance: none;
+            transition: 300ms;
+        }
+
+        .burger::before,
+        .burger::after {
+            content: "";
+            transition: 300ms;
+            transform-origin: center center;
+        }
+
+        .burger::before {
+            transform: translateY(8px);
+        }
+
+        .burger::after {
+            transform: translateY(-8px);
+        }
+
+        .burger .line,
+        .burger::before,
+        .burger::after {
+            width: 25px;
+            height: 2.1px;
+            display: block;
+            background-color: black;
+            border-radius: 5px;
+            position: absolute;
+        }
+
+        .burger .line:checked {
+            width: 0;
+            transition-delay: 100ms;
+        }
+
+        .burger:has(.line:checked)::before {
+            animation: animation1 400ms ease-out 0s 1 both;
+        }
+
+        .burger:has(.line:checked)::after {
+            animation: animation2 400ms ease-out 0s 1 both;
+        }
+
+        .burger:hover {
+            background: #aeaeae;
+            border-radius: 50%;
+        }
+
+        .burger:hover .line,
+        .burger:hover::before,
+        .burger:hover::after {
+            background: #e8e8e8;
+        }
+
+        .burger:active {
+            scale: 0.95;
+        }
+
+        @keyframes animation1 {
+            0% {
+                transform: translateY(8px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(45deg);
+            }
+        }
+
+        @keyframes animation2 {
+            0% {
+                transform: translateY(-8px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(-45deg);
+            }
+        }
+
+
+        .content-1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            letter-spacing: 8px;
+            font-size: larger;
+            text-transform: uppercase;
+            height: fit-content;
+            margin: 20px;
+            border-radius: 25px;
+            background-color: rgb(242, 242, 242);
+        }
+  
+        .content-1 p{
+            text-decoration: solid;
+        }
+
+        #imageofpergume{
+            overflow: hidden;
+            height: 500px;
+            border-radius: 25px;
         }
 
         .container {
@@ -232,19 +255,13 @@
             width: 32%;
         }
 
-        .container-item p {
-            text-align: justify;
+        .container-item p { text-align: justify;
             padding: 5%;
         }
 
         .content-wrapper {
             flex-direction: column;
             background-color: white;
-        }
-
-        .content1 {
-            background-color: white;
-            margin: 1%;
         }
 
         .sidebar {
@@ -295,7 +312,7 @@
 
 <body onload="myFunc();">
     <div id="intro">
-      <div class="burger-icon">
+        <div class="burger-icon">
             <label class="burger" for="burger">
                 <input class="line" type="checkbox" id="burger" />
             </label>
@@ -306,7 +323,7 @@
             <source src="video/colors.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
         </video>
-        <div class="motto1">Be irreplaceable</div>
+        <div class="motto1">to Be irreplaceable</div>
         <div class="motto2">Be different.</div>
         <div class="letter-c">C</div>
         <div class="letter-h">H</div>
@@ -328,7 +345,7 @@
         <a href="#">ABOUT CHANEL</a>
     </div>
     <div class="navlinks">
-          <a href="#">HAUTE COUTURE</a>
+        <a href="#">HAUTE COUTURE</a>
         <a href="#">FASHION</a>
         <a href="#">JWELERY</a>
         <a href="#">FINE JWELERY</a>
@@ -339,20 +356,17 @@
         <a href="#">FRAGREANCE</a>
         <a href="#">ABOUT CHANEL</a>
     </div>
-    <div class="heder">
-        <img src="images/karma.png" alt="image of karma">
-        <h1 class="main-heading">Hello</h1>
-    </div>
+    <img src="images/artdetail.JPG" alt="img" style="width: 100%;">
+ 
 
     <div class="content-wrapper">
-        <div class="content1">
-            <div class="about-me">
-                <h1>about me</h1>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ea suscipit placeat architecto molestias
-                omnis aliquam quod exercitationem maiores vitae!
-            </div>
+      
+        <div class="content-1">
+            <img src="images/Designer.png" alt="image of perfume chanel" id="imageofpergume">
+        <p>
+            limited-edition N.5 L'EAU
+        </p>
         </div>
-
         <div class="sidebar">
             <h1 style="padding: 0px;">popular</h1>
             <ul>
@@ -401,9 +415,13 @@
                     Commodi veniam eum laborum ipsam minus culpa reiciendis dignissimos.</p>
             </div>
         </div>
-        footer
     </div>
     <script>
+        $(".navlinks a").hover(function(){
+            $(this).animate({marginLeft : "19px",marginRight : "19px"},300)
+        },function(){
+            $(this).animate({marginLeft : "0px",marginRight : "0px"},100)
+        })
         function myFunc() {
             $("#intro").animate({ height: "200px" });
             $(".motto1").delay(500).fadeIn(1000);
@@ -418,7 +436,6 @@
                 $(".letter-e").delay(2500).fadeIn(800);
                 $(".letter-l").delay(3000).fadeIn(800);
 
-
             });
             $("#myVideo").delay(7000).fadeOut(500, function () {
                 $("#intro").css("position", "sticky")
@@ -427,5 +444,4 @@
         }
     </script>
 </body>
-
 </html>
