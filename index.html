@@ -4,310 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test 1</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            position: relative;
-            margin: 0px;
-            -webkit-font-smoothing: antialiased;
-            background-color: white;
-            font-family: sans-serif;
-        }
-
-        #intro {
-            position: relative;
-            top: 0;
-            background-color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            font-size: 5em;
-            font-weight: 1000;
-            height: 0px;
-            gap: 8.5%;
-            overflow: hidden;
-        }
-
-        #intro div {
-            margin: 0px;
-            padding: 0px;
-            color: rgba(0, 0, 0, 1);
-            z-index: 2;
-        }
-
-        .motto1 {
-            display: none;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-        .motto2 {
-            display: none;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-
-        .letter-c,
-        .letter-h,
-        .letter-a,
-        .letter-n,
-        .letter-e,
-        .letter-l {
-            display: none;
-            text-align: center;
-        }
-
-        #myVideo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            min-width: 100%;
-            min-height: 100%;
-            width: 100%;
-            z-index: 1;
-        }
-
-        .navlinks {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            text-align: center;
-            background-color: rgba(255, 255, 255, 1);
-            padding: 8px;
-        }
-
-        .sidepanel-navkinks {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            left: 0;
-            width: 50%;
-            background-color: whitesmoke;
-            border-radius: 1%;
-            z-index: 22;
-        }
-
-        .navlinks a {
-            text-decoration: none;
-            color: #333;
-            font-family: Helvetica, Open-Sans, "sans-serif-light", sans-serif;
-            font-size: .875rem;
-            font-weight: 300;
-            letter-spacing: .00625rem;
-            transition: transform 0.18s ;
-            line-height: 1.2857142857;
-        }
-
-        .navlinks a:hover {
-            color: black;
-            transform: scale(1.4);
-        }
-
-        .burger-icon {
-            position: absolute;
-            left: 10px;
-            /* Adjust as needed */
-            top: 10px;
-            /* Adjust as needed */
-            z-index: 3;
-        }
-
-        .burger {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: 300ms;
-            border-radius: 10px;
-        }
-
-        .burger input[type="checkbox"] {
-            appearance: none;
-            transition: 300ms;
-        }
-
-        .burger::before,
-        .burger::after {
-            content: "";
-            transition: 300ms;
-            transform-origin: center center;
-        }
-
-        .burger::before {
-            transform: translateY(8px);
-        }
-
-        .burger::after {
-            transform: translateY(-8px);
-        }
-
-        .burger .line,
-        .burger::before,
-        .burger::after {
-            width: 25px;
-            height: 2.1px;
-            display: block;
-            background-color: black;
-            border-radius: 5px;
-            position: absolute;
-        }
-
-        .burger .line:checked {
-            width: 0;
-            transition-delay: 100ms;
-        }
-
-        .burger:has(.line:checked)::before {
-            animation: animation1 400ms ease-out 0s 1 both;
-        }
-
-        .burger:has(.line:checked)::after {
-            animation: animation2 400ms ease-out 0s 1 both;
-        }
-
-        .burger:hover {
-            background: #aeaeae;
-            border-radius: 50%;
-        }
-
-        .burger:hover .line,
-        .burger:hover::before,
-        .burger:hover::after {
-            background: #e8e8e8;
-        }
-
-        .burger:active {
-            scale: 0.95;
-        }
-
-        @keyframes animation1 {
-            0% {
-                transform: translateY(8px) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(0px) rotate(0deg);
-            }
-
-            100% {
-                transform: translateY(0px) rotate(45deg);
-            }
-        }
-
-        @keyframes animation2 {
-            0% {
-                transform: translateY(-8px) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(0px) rotate(0deg);
-            }
-
-            100% {
-                transform: translateY(0px) rotate(-45deg);
-            }
-        }
-
-
-        .content-1{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: 600;
-            letter-spacing: 8px;
-            font-size: larger;
-            text-transform: uppercase;
-            height: fit-content;
-            margin: 20px;
-            border-radius: 25px;
-            background-color: rgb(242, 242, 242);
-        }
-  
-        .content-1 p{
-            text-decoration: solid;
-        }
-
-        #imageofpergume{
-            overflow: hidden;
-            height: 500px;
-            border-radius: 25px;
-        }
-
-        .container {
-            display: flex;
-            justify-content: space-evenly;
-        }
-
-        .container-item {
-            text-align: center;
-            width: 32%;
-        }
-
-        .container-item p { text-align: justify;
-            padding: 5%;
-        }
-
-        .content-wrapper {
-            flex-direction: column;
-            background-color: white;
-        }
-
-        .sidebar {
-            background-color: white;
-            margin: 1%;
-            margin-left: 0px;
-        }
-
-        .contact {
-            position: sticky;
-            display: flex;
-            justify-content: flex-end;
-            flex-direction: column;
-            bottom: 0;
-            color: white;
-            margin: 0px;
-            padding: 20px;
-            width: 100%;
-            z-index: -13;
-            background-color: black;
-        }
-
-        @media screen and (max-width: 500px) {
-
-            .container,
-            .content-wrapper {
-                flex-direction: column;
-            }
-
-            .container-item {
-                width: 100%;
-                margin-bottom: 2px;
-            }
-
-            .sidebar {
-                width: 100%;
-                float: none;
-                margin: 10px;
-            }
-
-            .content1 {
-                width: auto;
-            }
-        }
-    </style>
-
+    <title>CHANEL Official Website: Fashion, Fragrance, Beauty, Watches, Fine ...</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/Chanel-LuxuryFashion/favicon.ico" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- External Css -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body onload="myFunc();">
@@ -350,14 +58,13 @@
         <a href="#">JWELERY</a>
         <a href="#">FINE JWELERY</a>
         <a href="#">WATCHES</a>
-        <a href="">EYEWAER</a>
+        <a href="#">EYEWAER</a>
         <a href="#">SKINCARE</a>
         <a href="#">MAKEUP</a>
         <a href="#">FRAGREANCE</a>
         <a href="#">ABOUT CHANEL</a>
     </div>
-    <img src="images/artdetail.JPG" alt="img" style="width: 100%;">
- 
+    <!-- <img src="images/artdetail.JPG" alt="img" style="width: 100%;"> -->
 
     <div class="content-wrapper">
       
@@ -367,36 +74,243 @@
             limited-edition N.5 L'EAU
         </p>
         </div>
-        <div class="sidebar">
-            <h1 style="padding: 0px;">popular</h1>
-            <ul>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
-                <li>ji</li>
+    </div>
+     <div class="section1 img-property">
+        <div class="container-fluid haute">
+            <h6>HAUTE COUTURE</h6>
+            <p class="desc">FALL-WINTER 2024/25</p>
+            <p class="desc">SHOW</p>
+        </div>
 
-            </ul>
+        <div class="button">
+            <button class="btn-lg btnp">
+                SEE MORE
+            </button>
         </div>
     </div>
+
+    <div class="section2 img-property">
+        <div class="container-fluid haute">
+            <h6>FINE JEWELRY</h6>
+            <p class="desc">N'5</p>
+        </div>
+        <div class="button">
+            <button class="btn-lg btnp">
+                SHOP NOW
+            </button>
+        </div>
+    </div>
+
+    <div class="section3 img-property">
+        <div class="container-fluid haute">
+            <h6>FRAGRANCE</h6>
+            <p class="desc">BLEU DE CHANEL</p>
+        </div>
+        <div class="button">
+            <button class="btn-lg btnp">
+                SHOP NOW
+            </button>
+        </div>
+    </div>
+
+    <div class="section4 img-property">
+        <div class="container-fluid haute">
+            <h6>FASHION</h6>
+            <p class="desc">2021/22 METIERS D'ART</p>
+            <p class="desc">COLLECTION</p>
+        </div>
+        <div class="button">
+            <button class="btn-lg btnp">
+                SEE MORE
+            </button>
+        </div>
+    </div>
+
+    <div class="section5 img-property">
+        <div class="container-fluid haute">
+            <h6>MAKEUP</h6>
+            <p class="desc">UN ETE EN GRAND</p>
+        </div>
+        <div class="button">
+            <button class="btn-lg btnp">
+                SHOP NOW
+            </button>
+        </div>
+    </div>
+
+    <div class="section6 img-property">
+        <div class="container-fluid haute">
+            <h6>SKINCARE</h6>
+            <p class="desc">CLEANSING COLLECTION</p>
+        </div>
+        <div class="button">
+            <button class="btn-lg btnp">
+                SHOP NOW
+            </button>
+        </div>
+    </div>
+
+    <div class="section7 img-property">
+        <div class="container-fluid haute">
+            <h6>WATCHES</h6>
+            <p class="desc">CHANEL WANTED</p>
+            <p class="desc">CAPSULE COLLECTION</p>
+        </div>
+        <div class="button">
+            <button class="btn-lg btnp">
+                SEE MORE
+            </button>
+        </div>
+    </div>
+
+    <div class="section8 img-property">
+        <div class="container-fluid haute">
+            <h6>EYEWEAR</h6>
+            <p class="desc">2022 CAMPAIGN</p>
+        </div>
+        <div class="button">
+            <button class="btn-lg btnp">
+                SEE MORE
+            </button>
+        </div>
+    </div>
+
+    <div class="section9 img-property">
+        <div class="container-fluid haute">
+            <h6>HIGH JEWELRY</h6>
+            <p class="desc">COLLECTION 1932</p>
+        </div>
+        <div class="button">
+            <button class="btn-lg btnp">
+                SEE MORE
+            </button>
+        </div>
+    </div>
+
+    <div class="section10 img-property">
+        <div class="container-fluid haute">
+            <h6>CHANEL SUPPORTS</h6>
+            <p class="desc">BLACK AMBITION</p>
+        </div>
+        <div class="button">
+            <button class="btn-lg btnp">
+                LEARN MORE
+            </button>
+        </div>
+    </div>
+
+
+    <div class="section11">
+        <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title tit-ca">CONTACT AN ADVISOR</h5>
+                    <p class="card-text">Available 24/7. TO speak with Customer Care, call <span class="number">
+                            1.800.550.0005 </span> or Use the chat and email services below.</p>
+                    <p class="card-text"><small class="text-muted">
+                            <a href="#chat" class="link-cust">Chat</a>
+                            <a href="#email" class="link-cust shift">Email</a>
+                            <a href="#call" class="link-cust shift">Call</a>
+                        </small></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title tit-ca">FIND A STORE</h5>
+                    <p class="card-text">Enter a location to find the closest CHANEL stores
+                    </p>
+                    <p class="card-text"><small class="text-muted">
+                            <div class="form-floating mb-3">
+                                <input type="search" class="form-control" id="floatingInput" placeholder="Search">
+                            </div>
+                        </small> </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title tit-ca">NEWS LETTER</h5>
+                    <p class="card-text">Subscribe to receive news from CHANEL</p>
+                    <p class="card-text"><small class="text-muted">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput"
+                                    placeholder="Enter your email address">
+                            </div>
+                        </small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
     <div class="contact">
-        <div class="container">
+   <footer>
+        <h1 class="container-fluid foot">CHANEL</h1>
+        <div class="card-group wrap">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title tit-ca">EXPLORE CHANEL.COM</h5>
+                    <p class="card-text">Haute Couture</p>
+                    <p class="card-text">Fashion</p>
+                    <p class="card-text">High Jewelry</p>
+                    <p class="card-text">Fine Jewelry</p>
+                    <p class="card-text">Watches</p>
+                    <p class="card-text">Eyewear</p>
+                    <p class="card-text">Fragrance</p>
+                    <p class="card-text">Makeup</p>
+                    <p class="card-text">Skincare</p>
+                    <p class="card-text">Sitemap</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title tit-ca">ONLINE SERVICES</h5>
+                    <p class="card-text">Payment Methods</p>
+                    <p class="card-text">Shipping Options</p>
+                    <p class="card-text">My Account</p>
+                    <p class="card-text">Returns</p>
+                    <p class="card-text">FAQ</p>
+                    <p class="card-text">Care & Services</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title tit-ca">BOUTIQUE SERVICES</h5>
+                    <p class="card-text">Store Locator</p>
+                    <p class="card-text">Book an Appointment</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title tit-ca">THE HOUSE OF CHANEL</h5>
+                    <p class="card-text">Carrers</p>
+                    <p class="card-text">Legal</p>
+                    <p class="card-text">Privacy</p>
+                    <p class="card-text">Information About CCPA Do Not Sell</p>
+                    <p class="card-text">Report to Society</p>
+                    <p class="card-text">Fighting Counterfeits</p>
+                    <p class="card-text">Accessibility</p>
+                    <p class="card-text">California Transparency in Supply Chains</p>
+                    <p class="card-text">CHANEL Racial Justice Efforts</p>
+                    <p class="card-text">CHANEL COVID-19 Relief Efforts</p>
+                    <p class="card-text">CHANEL Supports Black Ambition</p>
+                    <p class="card-text">Transparency in Coverage</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="iconslast">
+            <i class="fa fa-instagram fa-2x ig"></i>
+            <i class="fa fa-facebook fa-2x ig"></i>
+            <i class="fa fa-twitter fa-2x ig"></i>
+            <i class="fa fa-youtube fa-2x ig"></i>
+            <i class="fa fa-linkedin fa-2x ig"></i>
+        </div>
+    </footer>
+        <!-- <div class="container">
             <div class="container-item">
                 <h2>Heading 1</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam fuga vitae quaerat, reiciendis,
@@ -413,7 +327,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab consectetur deleniti iure voluptatem
                     sunt?
                     Commodi veniam eum laborum ipsam minus culpa reiciendis dignissimos.</p>
-            </div>
+            </div> -->
         </div>
     </div>
     <script>
