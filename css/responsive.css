@@ -1,21 +1,25 @@
 @media screen and (max-width:1000px) {
     .section2 {
-        background-image: url("/Chanel-LuxuryFashion/images/finejewelryres.jpg");
+        background-image: url("../images/finejewelryres.jpg");
     }
 
     .section3 {
-        background-image: url("/Chanel-LuxuryFashion/images/perfumeres.webp");
+        background-image: url("../images/perfumeres.webp");
     }
 
     .section5 {
-        background-image: url("/Chanel-LuxuryFashion/images/makeupres.jpg");
+        background-image: url("../images/makeupres.jpg");
     }
 
     .section8 {
-        background-image: url("/Chanel-LuxuryFashion/images/eyewearres.webp");
+        background-image: url("../images/eyewearres.webp");
     }
 
     .section10 {
-        background-image: url("/Chanel-LuxuryFashion/images/balcksupport.webp");
+        background-image: url("../images/balcksupport.webp");
+    }
+
+    .contact{
+        position: relative;
     }
 }
