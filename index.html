@@ -20,17 +20,6 @@
 
 <body onload="myFunc();">
     <div id="intro">
-        <div class="burger-icon">
-            <label class="burger" for="burger">
-                <input class="line" type="checkbox" id="burger" />
-            </label>
-        </div>
-
-
-        <video autoplay muted loop id="myVideo">
-            <source src="video/colors.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
         <div class="motto1">"Elegance is refusal"</div>
         <div class="letter-c">C</div>
         <div class="letter-h">H</div>
@@ -39,19 +28,13 @@
         <div class="letter-e">E</div>
         <div class="letter-l">L</div>
     </div>
-    <div class="sidepanel-navkinks">
-        <a href="#">HAUTE COUTURE</a>
-        <a href="#">FASHION</a>
-        <a href="#">JWELERY</a>
-        <a href="#">FINE JWELERY</a>
-        <a href="#">WATCHES</a>
-        <a href="">EYEWAER</a>
-        <a href="#">SKINCARE</a>
-        <a href="#">MAKEUP</a>
-        <a href="#">FRAGREANCE</a>
-        <a href="#">ABOUT CHANEL</a>
-    </div>
+<div class="burger-icon">
+            <label class="burger" for="burger">
+                <input class="line" type="checkbox" id="burger" />
+            </label>
+        </div>
     <div class="navlinks">
+        
         <a href="#">HAUTE COUTURE</a>
         <a href="#">FASHION</a>
         <a href="#">JWELERY</a>
@@ -63,15 +46,17 @@
         <a href="#">FRAGREANCE</a>
         <a href="#">ABOUT CHANEL</a>
     </div>
-    <!-- <img src="images/artdetail.JPG" alt="img" style="width: 100%;"> -->
 
-    <div class="content-wrapper">
 
-        <div class="content-1">
-            <img src="images/Designer.png" alt="image of perfume chanel" id="imageofpergume">
-            <p>
-                limited-edition N.5 L'EAU
-            </p>
+    <div class="section0 img-property">
+        <div class="container-fluid haute">
+            <h6>FRAGRANCE</h6>
+            <p class="desc">N°5 L'EAU </p>
+        </div>
+        <div class="button">
+            <button class="btn-lg btnp">
+                SHOP NOW
+            </button>
         </div>
     </div>
     <div class="section1 img-property">
@@ -165,7 +150,7 @@
     <div class="section8 img-property">
         <div class="container-fluid haute">
             <h6>EYEWEAR</h6>
-            <p class="desc">2022 CAMPAIGN</p>
+            <p class="desc">2024 CAMPAIGN</p>
         </div>
         <div class="button">
             <button class="btn-lg btnp">
@@ -309,24 +294,7 @@
                 <i class="fa fa-linkedin fa-2x ig"></i>
             </div>
         </footer>
-        <!-- <div class="container">
-            <div class="container-item">
-                <h2>Heading 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam fuga vitae quaerat, reiciendis,
-                    perferendis architecto nesciunt similique exercitationem esse maxime nemo, ullam accusantium.</p>
-            </div>
-            <div class="container-item">
-                <h2>Heading 2</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto dolorem quo accusantium,
-                    explicabo
-                    quod, sed quasi numquam, corporis porro sapiente aliquid possimus modi!</p>
-            </div>
-            <div class="container-item">
-                <h2>Heading 3</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab consectetur deleniti iure voluptatem
-                    sunt?
-                    Commodi veniam eum laborum ipsam minus culpa reiciendis dignissimos.</p>
-            </div> -->
+ 
     </div>
     </div>
     <script>
@@ -334,7 +302,35 @@
             $(this).animate({ marginLeft: "19px", marginRight: "19px" }, 300)
         }, function () {
             $(this).animate({ marginLeft: "0px", marginRight: "0px" }, 100)
-        })
+        });
+
+        $('#burger').change(function(){
+            if($(this).is(':checked')){
+                $(".navlinks").css("display","flex"); 
+                console.log('Checkbox is checked');
+            } else {
+                console.log('Checkbox is unchecked');
+                $(".navlinks").css("display","none"); 
+            }
+        });
+
+        // const observer = new IntersectionObserver((entries) => {
+        //     entries.forEach((entry) => {
+        //         console.log(entry);
+        //         if (entry.isIntersecting) {
+        //             entry.target.classList.add('show');
+        //         } else {
+        //             entry.target.classList.remove('show');
+        //         }
+        //     });
+        // }, {
+        //     threshold: 0.1 // Adjust this value as needed
+        // });
+
+        // const hiddenElements = document.querySelectorAll('.haute');
+        // hiddenElements.forEach((el) => observer.observe(el));
+
+
         function myFunc() {
             $("#intro").animate({ height: "200px" });
             $(".motto1").delay(500).fadeIn(1000);
@@ -347,7 +343,7 @@
                 $(".letter-e").delay(2500).fadeIn(800);
                 $(".letter-l").delay(3000).fadeIn(800, function () {
                     $("#intro").css("position", "sticky");
-                    $("#intro").animate({ height: "50px", gap: "0.4%", fontSize: "2.2em", fontWeight: "600"});
+                    $("#intro").animate({ height: "50px", gap: "0.4%", fontSize: "2.2em", fontWeight: "600" });
 
                 });
 
