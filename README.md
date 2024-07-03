@@ -2,6 +2,13 @@
 
 This repository contains the frontend project created by ScriptSorcery for the Reimagine Round1 competition. It's the team's first web development project aimed at beginners in frontend development.
 
+## Team Members
+**ScriptSorcery Team:**
+- Shreyansh : Done every thing on his own (A -> Z).
+- Madhav : Gave some useless suggestions.
+- Ganesh : Helped with design ideas.
+- Gayatri : Done absolutely nothing.
+
 ## Project Overview
 The project is a website designed for CHANEL, featuring various sections showcasing different aspects of the brand such as fashion, fragrance, jewelry, and more. It includes animations, responsive design, and interactive elements.
 
@@ -30,12 +37,7 @@ To view the project:
 - Optimize performance for faster loading times.
 - Implement backend functionalities for dynamic content.
 
-## Team Members
-**ScriptSorcery Team:**
-- Shreyansh : Done every thing on his own (A -> Z).
-- Madhav : Gave some useless suggestions.
-- Ganesh : Helped with design ideas.
-- Gayatri : Done absolutely nothing.
+
 
 ## Acknowledgments
 - Thanks to Reimagine Round1 for organizing the competition.
