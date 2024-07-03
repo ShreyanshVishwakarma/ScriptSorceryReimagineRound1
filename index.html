@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
     <title>CHANEL Official Website: Fashion, Fragrance, Beauty, Watches, Fine ...</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="/Chanel-LuxuryFashion/favicon.ico" type="image/x-icon">
@@ -100,7 +103,7 @@
     <div class="section4 img-property">
         <div class="container-fluid haute">
             <h6>FASHION</h6>
-            <p class="desc">2021/22 METIERS D'ART</p>
+            <p class="desc">THE CHANEL COCO BEACH 2024</p>
             <p class="desc">COLLECTION</p>
         </div>
         <div class="button">
@@ -314,21 +317,32 @@
             }
         });
 
-        // const observer = new IntersectionObserver((entries) => {
-        //     entries.forEach((entry) => {
-        //         console.log(entry);
-        //         if (entry.isIntersecting) {
-        //             entry.target.classList.add('show');
-        //         } else {
-        //             entry.target.classList.remove('show');
-        //         }
-        //     });
-        // }, {
-        //     threshold: 0.1 // Adjust this value as needed
-        // });
+document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger);
 
-        // const hiddenElements = document.querySelectorAll('.haute');
-        // hiddenElements.forEach((el) => observer.observe(el));
+    // Select all sections
+    const sections = document.querySelectorAll(".img-property");
+
+    sections.forEach(section => {
+        // Select text elements within the section
+        const textElements = section.querySelectorAll("h6, p");
+
+        textElements.forEach(el => {
+            gsap.from(el, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    end: "top 30%",
+                    scrub: true,
+                    toggleActions: "play reverse play reverse"
+                }
+            });
+        });
+    });
+});
 
 
         function myFunc() {

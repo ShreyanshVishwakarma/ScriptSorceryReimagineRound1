@@ -7,9 +7,9 @@
         background-image: url("../images/perfumeres.webp");
     }
 
-    .section5 {
+    /* .section5 {
         background-image: url("../images/makeupres.jpg");
-    }
+    } */
 
     .section8 {
         background-image: url("../images/eyewearres.webp");
@@ -17,6 +17,10 @@
 
     .section10 {
         background-image: url("../images/balcksupport.webp");
+    }
+
+    .section9 {
+        background-image: url("../images/highjewelryres.jpg");
     }
 
     .contact{
@@ -36,9 +40,11 @@
         width: 300px;
 
     }
+
     .navlinks a{
         padding: 10px 30px;
     }
+
     .burger-icon{
         display: flex;
         position: fixed;
@@ -47,4 +53,9 @@
         z-index: 50;
     }
 
+}
+@media screen and (max-width:1000px) {
+    .section11{
+        padding: 5rem 2rem 5rem 2rem;
+    }
 }

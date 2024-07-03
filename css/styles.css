@@ -272,6 +272,7 @@
       background-attachment: fixed;
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
       padding-bottom: 5rem;
   }
 
@@ -329,7 +330,6 @@
       background-image: url("../images/CHANEL\ -\ New\ limited-edition\ N°5\ L’EAU\ –\ CHANEL\ Fragrance\ [wDsae-kHotA\ -\ 1046x588\ -\ 0m08s].png");
   }
 
-
   .section1 {
       background-image: url("../images/wintershow20245.webp");
   } 
@@ -343,7 +343,7 @@
   }
 
   .section4 {
-      background-image: url("../images/chanelmain.jpg");
+      background-image: url("../images/cocofashion.jpg");
   }
 
   .section5 {
