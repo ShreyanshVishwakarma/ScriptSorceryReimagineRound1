@@ -32,9 +32,10 @@ To view the project:
 
 ## Team Members
 **ScriptSorcery Team:**
-- Member 1: Role/Responsibility
-- Member 2: Role/Responsibility
-- Member 3: Role/Responsibility
+- Shreyansh : Done every thing on his own (A -> Z).
+- Madhav : Gave some useless suggestions.
+- Ganesh : Helped with design ideas.
+- Gayatri : Done absolutely nothing.
 
 ## Acknowledgments
 - Thanks to Reimagine Round1 for organizing the competition.
