@@ -31,23 +31,23 @@
         <div class="letter-e">E</div>
         <div class="letter-l">L</div>
     </div>
-<div class="burger-icon">
-            <label class="burger" for="burger">
-                <input class="line" type="checkbox" id="burger" />
-            </label>
-        </div>
+    <div class="burger-icon">
+        <label class="burger" for="burger">
+            <input class="line" type="checkbox" id="burger" />
+        </label>
+    </div>
     <div class="navlinks">
-        
-        <a href="#">HAUTE COUTURE</a>
-        <a href="#">FASHION</a>
-        <a href="#">JWELERY</a>
-        <a href="#">FINE JWELERY</a>
-        <a href="#">WATCHES</a>
-        <a href="#">EYEWAER</a>
-        <a href="#">SKINCARE</a>
-        <a href="#">MAKEUP</a>
-        <a href="#">FRAGREANCE</a>
-        <a href="#">ABOUT CHANEL</a>
+
+        <a href="https://www.chanel.com/us/haute-couture/">HAUTE COUTURE</a>
+        <a href="https://www.chanel.com/us/fashion/">FASHION</a>
+        <a href="https://www.chanel.com/us/high-jewelry/">JWELERY</a>
+        <a href="https://www.chanel.com/us/fine-jewelry/">FINE JWELERY</a>
+        <a href="https://www.chanel.com/us/watches/">WATCHES</a>
+        <a href="https://www.chanel.com/us/eyewear/">EYEWAER</a>
+        <a href="https://www.chanel.com/us/skincare/">SKINCARE</a>
+        <a href="https://www.chanel.com/us/makeup/">MAKEUP</a>
+        <a href="https://www.chanel.com/us/fragrance/">FRAGREANCE</a>
+        <a href="https://www.chanel.com/us/">ABOUT CHANEL</a>
     </div>
 
 
@@ -297,7 +297,7 @@
                 <i class="fa fa-linkedin fa-2x ig"></i>
             </div>
         </footer>
- 
+
     </div>
     </div>
     <script>
@@ -307,42 +307,42 @@
             $(this).animate({ marginLeft: "0px", marginRight: "0px" }, 100)
         });
 
-        $('#burger').change(function(){
-            if($(this).is(':checked')){
-                $(".navlinks").css("display","flex"); 
+        $('#burger').change(function () {
+            if ($(this).is(':checked')) {
+                $(".navlinks").css("display", "flex");
                 console.log('Checkbox is checked');
             } else {
                 console.log('Checkbox is unchecked');
-                $(".navlinks").css("display","none"); 
+                $(".navlinks").css("display", "none");
             }
         });
 
-document.addEventListener("DOMContentLoaded", function () {
-    gsap.registerPlugin(ScrollTrigger);
+        document.addEventListener("DOMContentLoaded", function () {
+            gsap.registerPlugin(ScrollTrigger);
 
-    // Select all sections
-    const sections = document.querySelectorAll(".img-property");
+            // Select all sections
+            const sections = document.querySelectorAll(".img-property");
 
-    sections.forEach(section => {
-        // Select text elements within the section
-        const textElements = section.querySelectorAll("h6, p");
+            sections.forEach(section => {
+                // Select text elements within the section
+                const textElements = section.querySelectorAll("h6, p");
 
-        textElements.forEach(el => {
-            gsap.from(el, {
-                opacity: 0,
-                y: 50,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 80%",
-                    end: "top 30%",
-                    scrub: true,
-                    toggleActions: "play reverse play reverse"
-                }
+                textElements.forEach(el => {
+                    gsap.from(el, {
+                        opacity: 0,
+                        y: 50,
+                        duration: 1,
+                        scrollTrigger: {
+                            trigger: section,
+                            start: "top 80%",
+                            end: "top 30%",
+                            scrub: true,
+                            toggleActions: "play reverse play reverse"
+                        }
+                    });
+                });
             });
         });
-    });
-});
 
 
         function myFunc() {
